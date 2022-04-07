@@ -1,26 +1,24 @@
 <template>
-  <div class="container">
-    <div class="row py-5">
-      <div class="col-6">
-        <img
-          v-if="hasIcon == true"
-          class="img-fluid section-icon pb-4"
-          :src="require(`../../assets/img/${iconPath}`)"
-          :alt="iconPath"
-        />
-        <h2>{{ title }}</h2>
-        <p class="py-3">
-          {{ text }}
-        </p>
-        <button class="my-btn my-btn-yellow">{{ btnText }}</button>
-      </div>
-      <div class="col-5 p-5">
-        <img
-          class="img-fluid"
-          :src="require(`../../assets/img/${imgPath}`)"
-          :alt="imgPath"
-        />
-      </div>
+  <div class="row py-5">
+    <div class="col-6" :class="{ 'order-1': section.textColOrder == 1 }">
+      <img
+        v-if="section.hasIcon == true"
+        class="img-fluid section-icon pb-4"
+        :src="require(`../../assets/img/${section.iconPath}`)"
+        :alt="section.iconPath"
+      />
+      <h2>{{ section.title }}</h2>
+      <p class="py-3">
+        {{ section.text }}
+      </p>
+      <button class="my-btn my-btn-yellow">{{ section.btnText }}</button>
+    </div>
+    <div class="col-5 p-5">
+      <img
+        class="img-fluid"
+        :src="require(`../../assets/img/${section.imgPath}`)"
+        :alt="section.imgPath"
+      />
     </div>
   </div>
 </template>
@@ -28,7 +26,7 @@
 <script>
 export default {
   name: "standardContent",
-  props: ["iconPath", "imgPath", "title", "text", "btnText", "hasIcon"],
+  props: ["section"],
 };
 </script>
 
