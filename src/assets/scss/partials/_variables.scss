@@ -1,3 +1,23 @@
 $primaryColor: #E56768;
 $secondaryColor: #E9D758;
 $SectionHeadingColor: #3D404F;
+
+@mixin custom-list($textColor) {
+	margin: 0;
+	padding: 0;
+	li {
+		color: $textColor;
+		list-style-type: none;
+		a {
+			color: $textColor;
+			text-decoration: none;
+		}
+	}
+}
+
+@mixin flex($justify, $align, $gap) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+}
