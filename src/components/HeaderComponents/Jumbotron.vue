@@ -1,5 +1,6 @@
 <template>
   <div id="jumbo" class="text-center py-5 mx-auto">
+    <!-- content must change on slide  -->
     <h1>Key to your success</h1>
     <p class="py-4 fs-5">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur

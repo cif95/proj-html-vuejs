@@ -27,7 +27,7 @@ header {
   color: white;
   height: 90vh;
   background-image: linear-gradient($primaryColorTrans, $primaryColorTrans),
-    url(../assets/img/theme_slider2_bg-1.jpg);
+    url(../assets/img/theme_slider2_bg-1.jpg); // must change on slide
   background-position: top center;
   img.wave-svg {
     @include position(absolute, 0, 0, 0);

@@ -1,6 +1,14 @@
 @import "./_variables.scss";
 
-.my-btn{
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+.my-btn {
 	border-radius: 50px;
 	padding:1.2rem 2.2rem;
 }
