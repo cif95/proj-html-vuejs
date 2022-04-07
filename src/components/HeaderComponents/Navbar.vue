@@ -92,7 +92,7 @@ nav {
       @include flex(flex-end, center, 2rem);
       ul {
         @include custom-list(white);
-        @include flex(center, center, 2rem);
+        @include flex(center, center, 1.5rem);
         li.active,
         li.active a {
           color: $secondaryColor;

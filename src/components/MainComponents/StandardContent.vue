@@ -3,24 +3,22 @@
     <div class="row py-5">
       <div class="col-6">
         <img
+          v-if="hasIcon == true"
           class="img-fluid section-icon pb-4"
-          src="../../assets/img/Books-icon.png"
-          alt="books icon"
+          :src="require(`../../assets/img/${iconPath}`)"
+          :alt="iconPath"
         />
-        <h2>Thousands of courses</h2>
+        <h2>{{ title }}</h2>
         <p class="py-3">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus voluptate dolorem eligendi aut a similique praesentium
-          magni perferendis earum animi, sed cum fuga neque, itaque vitae iusto
-          sapiente velit natus?
+          {{ text }}
         </p>
-        <button class="my-btn my-btn-yellow">Browse through courses</button>
+        <button class="my-btn my-btn-yellow">{{ btnText }}</button>
       </div>
       <div class="col-5 p-5">
         <img
           class="img-fluid"
-          src="../../assets/img/Graduation-Illustration.png"
-          alt="graduation image"
+          :src="require(`../../assets/img/${imgPath}`)"
+          :alt="imgPath"
         />
       </div>
     </div>
@@ -30,6 +28,7 @@
 <script>
 export default {
   name: "standardContent",
+  props: ["iconPath", "imgPath", "title", "text", "btnText", "hasIcon"],
 };
 </script>
 
