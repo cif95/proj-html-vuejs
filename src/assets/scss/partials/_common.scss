@@ -5,8 +5,14 @@
 	padding:1.2rem 2.2rem;
 }
 
-.my-btn-secondary {
+.my-btn-yellow {
 	color: white;
 	border: 1px solid $secondaryColor;
 	background-color: $secondaryColor;
+}
+
+.my-btn-white {
+	color: $primaryColor;
+	border: 1px solid white;
+	background-color: white;
 }

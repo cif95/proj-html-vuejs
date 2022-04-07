@@ -22,7 +22,7 @@
             <i v-if="link.dropdown" class="fas fa-sort-down ms-2"></i>
           </li>
         </ul>
-        <button class="my-btn my-btn-secondary text-uppercase">
+        <button class="my-btn my-btn-yellow text-uppercase">
           View Courses
         </button>
       </div>

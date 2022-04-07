@@ -1,4 +1,5 @@
-$primaryColor: #E56768;
+$primaryColor: #e56767;
+$primaryColorTrans: #e56767e1;
 $secondaryColor: #E9D758;
 $SectionHeadingColor: #3D404F;
 
@@ -20,4 +21,12 @@ $SectionHeadingColor: #3D404F;
 	justify-content: $justify;
 	align-items: $align;
 	gap: $gap;
+}
+
+
+@mixin position($position, $right, $bottom, $left) {
+	position: $position;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
 }

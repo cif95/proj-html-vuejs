@@ -2,8 +2,7 @@
   <header>
     <Navbar />
     <Jumbotron />
-    <!-- logo+navbar -->
-    <!-- jumbotron(slider) -->
+    <img class="wave-svg" src="../assets/img/Wave-1.png" alt="wave image" />
   </header>
 </template>
 
@@ -23,7 +22,15 @@ export default {
 <style lang="scss">
 @import "../assets/scss/partials/_variables.scss";
 header {
-  height: 70vh;
-  background-color: $primaryColor;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  height: 90vh;
+  background-image: linear-gradient($primaryColorTrans, $primaryColorTrans),
+    url(../assets/img/theme_slider2_bg-1.jpg);
+  background-position: top center;
+  img.wave-svg {
+    @include position(absolute, 0, 0, 0);
+  }
 }
 </style>
