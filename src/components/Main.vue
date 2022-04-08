@@ -44,6 +44,7 @@
         <StandardContent :section="this.sections[2]" />
       </div>
     </section>
+    <Banner />
     <!-- subscribe banner component -->
   </main>
 </template>
@@ -53,6 +54,7 @@ import StandardContent from "./MainComponents/StandardContent.vue";
 import FacultiesContent from "./MainComponents/FacultiesContent.vue";
 import TimeLineContent from "./MainComponents/TimeLineContent.vue";
 import CoursesCard from "./MainComponents/CoursesCard.vue";
+import Banner from "./MainComponents/Banner.vue";
 
 export default {
   name: "IndexMain",
@@ -190,6 +192,7 @@ export default {
     FacultiesContent,
     TimeLineContent,
     CoursesCard,
+    Banner,
   },
 };
 </script>
