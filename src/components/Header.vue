@@ -30,7 +30,7 @@ header {
     url(../assets/img/theme_slider2_bg-1.jpg); // must change on slide
   background-position: top center;
   img.wave-svg {
-    @include position(absolute, 0, 0, 0);
+    @include position(absolute, inherit, 0, 0, 0);
   }
 }
 </style>

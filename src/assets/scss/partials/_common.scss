@@ -19,6 +19,12 @@ h2 {
 	background-color: $secondaryColor;
 }
 
+.my-btn-primary {
+	color: white;
+	border: 1px solid $primaryColor;
+	background-color: $primaryColor;
+}
+
 .my-btn-white {
 	color: $primaryColor;
 	border: 1px solid white;

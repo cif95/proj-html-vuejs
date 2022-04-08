@@ -16,8 +16,8 @@
         <img
           class="mb-3"
           :key="index"
-          :src="require(`../../assets/img/${item.imgPath}`)"
-          :alt="item.imgAlt"
+          :src="require(`../../assets/img/${item.thumbIconPath}`)"
+          :alt="item.thumbIconAlt"
         />
         <h6>{{ item.title }}</h6>
       </div>
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  name: "facultiesContent",
+  name: "FacultiesContent",
   props: ["faculties"],
 };
 </script>
@@ -60,9 +60,8 @@ div.my-slider {
       border-top: 0;
       border-top: 15px solid $primaryColor;
       display: block;
-      top: 100%;
       transform: translateX(-50%);
-      @include position(absolute, 0, 0, 50%);
+      @include position(absolute, 100%, 0, inherit, 50%);
     }
   }
 }

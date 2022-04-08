@@ -5,18 +5,20 @@
         <StandardContent :section="this.sections[0]" />
       </div>
     </section>
-    <section id="faculties" class="text-center">
+    <section id="faculties" class="text-center position-relative pb-5">
       <FacultiesContent :faculties="this.faculties" />
-      <div class="container">
-        <!-- changing props to standardContent when slides  -->
-        <StandardContent :section="this.sections[1]" />
+      <div class="container pb-5">
+        <!-- standard content active must change on click  -->
+        <StandardContent
+          v-show="item.active"
+          v-for="(item, index) in this.faculties"
+          :key="index"
+          :section="item"
+        />
       </div>
     </section>
     <section id="time-line">
-      <div class="container">
-        <h2>University Year</h2>
-        <!-- card component here -->
-      </div>
+      <TimeLineContent />
     </section>
     <section id="latest-courses">
       <div class="container">
@@ -26,12 +28,12 @@
     </section>
     <section id="methods">
       <div class="container">
-        <StandardContent :section="this.sections[2]" />
+        <StandardContent :section="this.sections[1]" />
       </div>
     </section>
     <section id="fees">
       <div class="container">
-        <StandardContent :section="this.sections[3]" />
+        <StandardContent :section="this.sections[2]" />
       </div>
     </section>
     <!-- subscribe banner component -->
@@ -41,6 +43,7 @@
 <script>
 import StandardContent from "./MainComponents/StandardContent.vue";
 import FacultiesContent from "./MainComponents/FacultiesContent.vue";
+import TimeLineContent from "./MainComponents/TimeLineContent.vue";
 
 export default {
   name: "IndexMain",
@@ -48,34 +51,69 @@ export default {
     return {
       faculties: [
         {
-          title: "Law Faculty",
-          imgPath: "Gavel-v2.png",
-          imgAlt: "Law faculty icon",
+          thumbIconPath: "Gavel-v2.png",
+          thumbIconAlt: "Law faculty icon",
           active: true,
+          hasIcon: false,
+          iconPath: null,
+          imgPath: "Gavel-Illustration-e1556884768193.png",
+          title: "Law Faculty",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
+          btnText: "ReadMore",
+          btnColor: "primary",
+          textColOrder: 1,
         },
         {
+          active: false,
+          hasIcon: false,
+          iconPath: null,
+          thumbIconPath: "Coins-tabs-v2.png",
+          thumbIconAlt: "Economy faculty icon",
           title: "Economy",
-          imgPath: "Coins-tabs-v2.png",
-          imgAlt: "Economy faculty icon",
-          active: false,
+          imgPath: "Economy.png",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
+          btnText: "ReadMore",
+          btnColor: "primary",
+          textColOrder: 1,
         },
         {
+          active: false,
+          hasIcon: false,
+          iconPath: null,
           title: "Medicine",
-          imgPath: "Medicine-tabs-v2.png",
-          imgAlt: "Medicine faculty icon",
-          active: false,
+          thumbIconPath: "Medicine-tabs-v2.png",
+          thumbIconAlt: "Medicine faculty icon",
+          imgPath: "Medicine.png",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
+          btnText: "ReadMore",
+          btnColor: "primary",
+          textColOrder: 1,
         },
         {
+          active: false,
+          hasIcon: false,
+          iconPath: null,
+          thumbIconPath: "Computer-tabs-v2.png",
+          thumbIconAlt: "Computer science faculty icon",
           title: "Computer science",
-          imgPath: "Computer-tabs-v2.png",
-          imgAlt: "Computer science faculty icon",
-          active: false,
+          imgPath: "Computer-Science.png",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
+          btnText: "ReadMore",
+          btnColor: "primary",
+          textColOrder: 1,
         },
         {
-          title: "Grapich design",
-          imgPath: "Palette-tabs-v2.png",
-          imgAlt: "Graphic design faculty icon",
           active: false,
+          hasIcon: false,
+          iconPath: null,
+          thumbIconPath: "Palette-tabs-v2.png",
+          thumbIconAlt: "Graphic design faculty icon",
+          title: "Graphic design",
+          imgPath: "Graphic-Design.png",
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
+          btnText: "ReadMore",
+          btnColor: "primary",
+          textColOrder: 1,
         },
       ],
       sections: [
@@ -86,16 +124,8 @@ export default {
           title: "Thousands of courses",
           text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
           btnText: "Browse through courses",
+          btnColor: "yellow",
           textColOrder: 0,
-        },
-        {
-          hasIcon: false,
-          iconPath: null,
-          imgPath: "Gavel-Illustration-e1556884768193.png",
-          title: "Law Faculty",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
-          btnText: "Read More",
-          textColOrder: 1,
         },
         {
           hasIcon: true,
@@ -104,6 +134,7 @@ export default {
           title: "The most efficient examination method",
           text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
           btnText: "Discover the method",
+          btnColor: "primary",
           textColOrder: 0,
         },
         {
@@ -113,6 +144,7 @@ export default {
           title: "Variable fee for international students",
           text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
           btnText: "List of Fees",
+          btnColor: "primary",
           textColOrder: 1,
         },
       ],
@@ -121,18 +153,19 @@ export default {
   components: {
     StandardContent,
     FacultiesContent,
+    TimeLineContent,
   },
 };
 </script>
 
 <style lang="scss">
 @import "../assets/scss/partials/_variables.scss";
+main {
+  overflow-x: hidden;
+}
 h1,
 h2 {
   color: $sectionHeadingColor;
-}
-section {
-  margin-bottom: 2rem;
 }
 section#courses {
   background-image: url(../assets/img/home-background.png);
@@ -140,12 +173,21 @@ section#courses {
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+section#faculties::after {
+  content: url("../assets/img/svg/svg-0.svg");
+  @include position(absolute, 81%, 0, inherit, 0);
+}
+
 section#time-line {
-  height: 80vh;
+  color: white;
   background-color: $primaryColor;
   h1,
   h2 {
     color: white;
+  }
+  img.clock-icon {
+    width: 75px;
   }
 }
 </style>

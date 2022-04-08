@@ -11,7 +11,14 @@
       <p class="py-3">
         {{ section.text }}
       </p>
-      <button class="my-btn my-btn-yellow">{{ section.btnText }}</button>
+      <button
+        :class="
+          section.btnColor == 'yellow' ? 'my-btn-yellow' : 'my-btn-primary'
+        "
+        class="my-btn"
+      >
+        {{ section.btnText }}
+      </button>
     </div>
     <div class="col-5 p-5">
       <img
