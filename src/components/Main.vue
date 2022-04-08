@@ -6,31 +6,9 @@
       </div>
     </section>
     <section id="faculties" class="text-center">
-      <h2>Faculties available at EduPrime</h2>
-      <p class="w-25 mx-auto py-3">
-        A single university with a load of courses, tailored to satisfy any
-        student’s needs.
-      </p>
-      <!-- slider -->
-      <div class="my-slider">
-        <div
-          class="my-slider-thumbs"
-          :class="{ active: item.active }"
-          v-for="(item, index) in this.faculties"
-          :key="index"
-        >
-          <img
-            class="mb-3"
-            :key="index"
-            :src="require(`../assets/img/${item.imgPath}`)"
-            :alt="item.imgAlt"
-          />
-          <h6>{{ item.title }}</h6>
-        </div>
-      </div>
+      <FacultiesContent :faculties="this.faculties" />
       <div class="container">
         <!-- changing props to standardContent when slides  -->
-        -->
         <StandardContent :section="this.sections[1]" />
       </div>
     </section>
@@ -62,6 +40,7 @@
 
 <script>
 import StandardContent from "./MainComponents/StandardContent.vue";
+import FacultiesContent from "./MainComponents/FacultiesContent.vue";
 
 export default {
   name: "IndexMain",
@@ -141,6 +120,7 @@ export default {
   },
   components: {
     StandardContent,
+    FacultiesContent,
   },
 };
 </script>
@@ -160,36 +140,12 @@ section#courses {
   background-size: contain;
   background-repeat: no-repeat;
 }
-div.my-slider {
-  @include flex(center, center, 0);
-  box-shadow: 1px 1px 15px #ececee;
-  div.my-slider-thumbs {
-    position: relative;
-    color: $primaryColor;
-    padding: 2.5rem 4.5rem;
-    border: 1px solid #ececee;
-    img {
-      width: 90px;
-    }
-    &.active {
-      color: white;
-      background-color: $primaryColor;
-      img {
-        filter: saturate(0) brightness(2);
-      }
-    }
-    &.active::before {
-      content: "";
-      width: 0;
-      height: 0;
-      border: 16px solid transparent;
-      border-top: 0;
-      border-top: 15px solid $primaryColor;
-      display: block;
-      top: 100%;
-      transform: translateX(-50%);
-      @include position(absolute, 0, 0, 50%);
-    }
+section#time-line {
+  height: 80vh;
+  background-color: $primaryColor;
+  h1,
+  h2 {
+    color: white;
   }
 }
 </style>
