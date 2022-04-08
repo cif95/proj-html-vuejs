@@ -29,19 +29,10 @@ section {
     color: white;
   }
   input {
-    border: 1px solid white;
-    padding: 1.5rem;
-    color: $greyTextColor;
-    border-radius: 50px;
+    @include myInput;
   }
   i {
-    color: white;
-    padding: 1.75rem;
-    border-radius: 50px;
-    font-size: 1.2rem;
-    background-color: $secondaryColor;
-    transform: translateY(-50%);
-    @include position(absolute, 50%, inherit, inherit, 81%);
+    @include myInputIcon;
   }
 }
 </style>

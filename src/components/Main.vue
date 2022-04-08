@@ -20,7 +20,6 @@
     </section>
     <section id="time-line">
       <TimeLineContent />
-      <!-- card component here -->
     </section>
     <section id="latest-courses" class="pt-5">
       <div class="container py-5">
@@ -45,7 +44,6 @@
       </div>
     </section>
     <Banner />
-    <!-- subscribe banner component -->
   </main>
 </template>
 
