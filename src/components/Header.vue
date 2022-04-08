@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="mb-2">
     <Navbar />
     <Jumbotron />
     <img class="wave-svg" src="../assets/img/Wave-1.png" alt="wave image" />
@@ -26,7 +26,7 @@ header {
   position: relative;
   color: white;
   height: 90vh;
-  background-image: linear-gradient($primaryColorTrans, $primaryColorTrans),
+  background-image: linear-gradient($primaryColorLayer, $primaryColorLayer),
     url(../assets/img/theme_slider2_bg-1.jpg); // must change on slide
   background-position: top center;
   img.wave-svg {

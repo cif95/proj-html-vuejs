@@ -5,11 +5,32 @@
         <StandardContent :section="this.sections[0]" />
       </div>
     </section>
-    <section id="faculties">
+    <section id="faculties" class="text-center">
+      <h2>Faculties available at EduPrime</h2>
+      <p class="w-25 mx-auto py-3">
+        A single university with a load of courses, tailored to satisfy any
+        student’s needs.
+      </p>
+      <!-- slider -->
+      <div class="my-slider">
+        <div
+          class="my-slider-thumbs"
+          :class="{ active: item.active }"
+          v-for="(item, index) in this.faculties"
+          :key="index"
+        >
+          <img
+            class="mb-3"
+            :key="index"
+            :src="require(`../assets/img/${item.imgPath}`)"
+            :alt="item.imgAlt"
+          />
+          <h6>{{ item.title }}</h6>
+        </div>
+      </div>
       <div class="container">
-        <h2>Faculties available at EduPrime</h2>
-        <p>Lorem lorem lorem</p>
-        <!-- slider goes here -> changing props to standardContent when slides  -->
+        <!-- changing props to standardContent when slides  -->
+        -->
         <StandardContent :section="this.sections[1]" />
       </div>
     </section>
@@ -46,6 +67,38 @@ export default {
   name: "IndexMain",
   data() {
     return {
+      faculties: [
+        {
+          title: "Law Faculty",
+          imgPath: "Gavel-v2.png",
+          imgAlt: "Law faculty icon",
+          active: true,
+        },
+        {
+          title: "Economy",
+          imgPath: "Coins-tabs-v2.png",
+          imgAlt: "Economy faculty icon",
+          active: false,
+        },
+        {
+          title: "Medicine",
+          imgPath: "Medicine-tabs-v2.png",
+          imgAlt: "Medicine faculty icon",
+          active: false,
+        },
+        {
+          title: "Computer science",
+          imgPath: "Computer-tabs-v2.png",
+          imgAlt: "Computer science faculty icon",
+          active: false,
+        },
+        {
+          title: "Grapich design",
+          imgPath: "Palette-tabs-v2.png",
+          imgAlt: "Graphic design faculty icon",
+          active: false,
+        },
+      ],
       sections: [
         {
           hasIcon: true,
@@ -92,17 +145,51 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../assets/scss/partials/_variables.scss";
 h1,
 h2 {
   color: $sectionHeadingColor;
 }
+section {
+  margin-bottom: 2rem;
+}
 section#courses {
   background-image: url(../assets/img/home-background.png);
-  background-position: center;
+  background-position: 100%;
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 0 5rem;
+}
+div.my-slider {
+  @include flex(center, center, 0);
+  box-shadow: 1px 1px 15px #ececee;
+  div.my-slider-thumbs {
+    position: relative;
+    color: $primaryColor;
+    padding: 2.5rem 4.5rem;
+    border: 1px solid #ececee;
+    img {
+      width: 90px;
+    }
+    &.active {
+      color: white;
+      background-color: $primaryColor;
+      img {
+        filter: saturate(0) brightness(2);
+      }
+    }
+    &.active::before {
+      content: "";
+      width: 0;
+      height: 0;
+      border: 16px solid transparent;
+      border-top: 0;
+      border-top: 15px solid $primaryColor;
+      display: block;
+      top: 100%;
+      transform: translateX(-50%);
+      @include position(absolute, 0, 0, 50%);
+    }
+  }
 }
 </style>
