@@ -1,5 +1,5 @@
 <template>
-  <div class="my-card border-1 d-flex flex-column mx-auto position-relative">
+  <div class="my-card border-1 d-flex flex-column mx-auto">
     <h3>{{ item.title }}</h3>
     <span>
       <i class="far fa-calendar-alt"></i>
