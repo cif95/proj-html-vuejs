@@ -43,7 +43,7 @@ p {
   margin: 0 auto;
 }
 img {
-  filter: contrast(5%);
+  filter: contrast(0);
   max-width: 190px;
   min-height: 40px;
   max-height: 40px;

@@ -9,7 +9,6 @@ h2 {
 }
 
 .my-btn {
-	box-shadow: 1px 1px 9px #1515153b;
 	border-radius: 50px;
 	padding:1.35rem 2.8rem;
 }
@@ -22,6 +21,7 @@ h2 {
 
 .my-btn-primary {
 	color: white;
+	box-shadow: 1px 1px 9px #1515153b;
 	border: 1px solid $primaryColor;
 	background-color: $primaryColor;
 }
@@ -30,4 +30,10 @@ h2 {
 	color: $primaryColor;
 	border: 1px solid white;
 	background-color: white;
+}
+
+.my-btn-outline {
+  color: white;
+	border: 1px solid white;
+	background-color: transparent;
 }
