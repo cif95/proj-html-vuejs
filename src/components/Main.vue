@@ -27,7 +27,7 @@
           <div class="col-12 py-5">
             <h2>Latest courses</h2>
           </div>
-          <div class="col-3" v-for="(course, i) in this.courses" :key="i">
+          <div class="col-3 px-3" v-for="(course, i) in this.courses" :key="i">
             <CoursesCard :course="course" />
           </div>
         </div>
@@ -71,6 +71,7 @@ export default {
           btnText: "ReadMore",
           btnColor: "primary",
           textColOrder: 1,
+          isSliderItem: true,
         },
         {
           active: false,
@@ -84,6 +85,7 @@ export default {
           btnText: "ReadMore",
           btnColor: "primary",
           textColOrder: 1,
+          isSliderItem: true,
         },
         {
           active: false,
@@ -97,6 +99,7 @@ export default {
           btnText: "ReadMore",
           btnColor: "primary",
           textColOrder: 1,
+          isSliderItem: true,
         },
         {
           active: false,
@@ -110,6 +113,7 @@ export default {
           btnText: "ReadMore",
           btnColor: "primary",
           textColOrder: 1,
+          isSliderItem: true,
         },
         {
           active: false,
@@ -123,6 +127,7 @@ export default {
           btnText: "ReadMore",
           btnColor: "primary",
           textColOrder: 1,
+          isSliderItem: true,
         },
       ],
       sections: [
@@ -213,7 +218,7 @@ section#courses {
 
 section#faculties::after {
   content: url("../assets/img/svg/svg-0.svg");
-  @include position(absolute, 81%, 0, inherit, 0);
+  @include position(absolute, 82%, 0, inherit, 0);
 }
 
 section#time-line {
@@ -223,9 +228,6 @@ section#time-line {
   h1,
   h2 {
     color: white;
-  }
-  img.clock-icon {
-    width: 75px;
   }
 }
 </style>

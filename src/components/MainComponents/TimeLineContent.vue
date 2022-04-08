@@ -1,6 +1,6 @@
 <template>
   <div class="container py-5 mb-5">
-    <div class="row text-center">
+    <div id="university-year" class="row text-center">
       <div class="col-12 pb-5">
         <img
           class="clock-icon"
@@ -10,14 +10,14 @@
         <h2>University Year</h2>
       </div>
       <div class="col-4 offset-3">
-        <h5>Demo Classes</h5>
+        <h6>Demo Classes</h6>
         <p>
           In the first week, students try to accomodate with the teaching style
           and choose their optional courses.
         </p>
       </div>
       <div class="col-4">
-        <h5>Graduation Day</h5>
+        <h6>Graduation Day</h6>
         <p>
           In the first week, students try to accomodate with the teaching style
           and choose their optional courses.
@@ -27,14 +27,14 @@
         <img src="../../assets/img/Timeline-Item.png" alt="timeline picture" />
       </div>
       <div class="col-4 offset-1">
-        <h5>Orientation</h5>
+        <h6>Orientation</h6>
         <p>
           In the first week, students try to accomodate with the teaching style
           and choose their optional courses.
         </p>
       </div>
       <div class="col-4">
-        <h5>Evaluation</h5>
+        <h6>Evaluation</h6>
         <p>
           In the first week, students try to accomodate with the teaching style
           and choose their optional courses.
@@ -48,12 +48,12 @@
         />
       </div>
     </div>
-    <div class="row text-center">
+    <div id="upcoming-events" class="row text-center">
       <div class="col-12 pb-5">
         <h2>Upcoming Events</h2>
       </div>
       <div
-        class="col-4 pb-4"
+        class="col-4 px-0 py-4"
         v-for="(event, index) in this.upcomingEv"
         :key="index"
       >
@@ -100,12 +100,26 @@ export default {
 
 <style style="scss" scoped>
 @import "../../assets/scss/partials/_variables.scss";
+div#university-year h2 {
+  width: fit-content;
+  margin: 1.5rem auto;
+  background-color: #db2a2c;
+}
+h6 {
+  font-size: 1.2rem;
+}
+p {
+  font-weight: 300;
+  max-width: 90%;
+}
+img.clock-icon {
+  width: 65px;
+}
 div.container::after {
   content: url("../../assets/img/svg/svg-1.svg");
   position: absolute;
   top: 99.5%;
   left: 0;
   right: 0;
-  /* @include position(absolute, 99.5%, 0, inherit, 0); */
 }
 </style>

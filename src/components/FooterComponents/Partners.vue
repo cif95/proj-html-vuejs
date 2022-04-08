@@ -9,9 +9,11 @@
             level overviews. Iterative approaches to corporate strategy.
           </p>
         </div>
+      </div>
+      <div class="row row-cols-8">
         <div class="col">
           <img
-            class="img-fluid mx-4"
+            class="img-fluid px-3"
             v-for="(el, index) in 8"
             :key="index"
             :src="require(`../../assets/img/partner-${index + 1}.png`)"
@@ -43,9 +45,9 @@ p {
   margin: 0 auto;
 }
 img {
-  filter: contrast(0);
-  max-width: 190px;
-  min-height: 40px;
-  max-height: 40px;
+  filter: opacity(0.3);
+  max-width: 250px;
+  min-height: 50px;
+  max-height: 50px;
 }
 </style>

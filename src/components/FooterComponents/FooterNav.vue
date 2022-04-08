@@ -8,7 +8,7 @@
             src="../../assets/img/theme_eduprime_logo.png"
             alt="edu prime logo"
           />
-          <p class="py-5">
+          <p class="py-3">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis
             corrupti quasi odit vero.
           </p>
@@ -135,6 +135,7 @@ export default {
 @import "../../assets/scss/partials/_variables.scss";
 section {
   color: white;
+  padding-top: 2.5rem;
   background-color: $primaryColor;
   div#socials i {
     width: 50px;
@@ -147,7 +148,7 @@ section {
   }
   ul {
     @include custom-list(white);
-    line-height: 2rem;
+    line-height: 2.25rem;
     padding-top: 1rem;
   }
   div#search-categories {
@@ -163,7 +164,7 @@ section {
     button.my-btn-outline {
       font-weight: 400;
       padding: 0.45rem 0.85rem;
-      font-size: 0.7rem;
+      font-size: 0.8rem;
       font-family: "Source Sans Pro", sans-serif;
     }
     p {

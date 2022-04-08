@@ -35,14 +35,21 @@ $greyTextColor: #8b8b8a;
 }
 
 @mixin eventCard{
-	width: 90%;
+  max-width: 85%;
   position: relative;
-  border-radius: 10px;
+  border-radius: 15px;
   padding: 2rem 0.5rem;
   color: $cardTextColor;
   background-color: white;
-  h3 {
+  h3.title {
     color: $sectionHeadingColor;
+  }
+  span.date {
+    font-size: 0.85rem;
+  }
+  p.info {
+    max-width: 85%;
+    margin: 0 auto;
   }
   button {
     font-size: 0.85rem;
@@ -52,19 +59,29 @@ $greyTextColor: #8b8b8a;
   }
 }
 
-@mixin coursesCard{
+@mixin courseCard{
   border-radius: 5px;
   position: relative;
   padding: 1.5rem;
   color: #74777B;
   box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.11);
   color: $cardTextColor;
-  h5 {
+  img {
+    width: 80px;
+  }
+  h5.title {
     color: $sectionHeadingColor;
+  }
+  p.price,
+  p.teacher {
+    font-size: 0.85rem;
+  }
+  span {
+    font-weight: bold;
   }
   button {
     font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
     transform: translateX(-50%);
     @include position(absolute, 90%, 0, inherit, 50%);
   }

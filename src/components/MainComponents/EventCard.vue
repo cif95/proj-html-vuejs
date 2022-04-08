@@ -1,11 +1,11 @@
 <template>
-  <div class="my-card border-1 d-flex flex-column mx-auto">
-    <h3>{{ item.title }}</h3>
-    <span>
+  <div class="my-event-card border-1 d-flex flex-column mx-auto">
+    <h3 class="title">{{ item.title }}</h3>
+    <span class="date pb-2">
       <i class="far fa-calendar-alt"></i>
       {{ item.date }}
     </span>
-    <p>{{ item.text }}</p>
+    <p class="info pb-3">{{ item.text }}</p>
     <button class="my-btn my-btn-primary">
       <i class="fas fa-plus"></i>
       Find More
@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/scss/partials/_variables.scss";
-div.my-card {
+div.my-event-card {
   @include eventCard;
 }
 </style>
