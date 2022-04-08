@@ -1,5 +1,5 @@
 <template>
-  <div id="jumbo" class="text-center py-5 mx-auto">
+  <div id="header-hero" class="text-center py-2 mx-auto">
     <!-- content must change on slide  -->
     <h1 class="text-white">Key to your success</h1>
     <p class="py-4 fs-5">
@@ -20,12 +20,12 @@
 
 <script>
 export default {
-  name: "HeaderJumbo",
+  name: "HeaderHero",
 };
 </script>
 
 <style lang="scss" scoped>
-div#jumbo {
+div#header-hero {
   width: 35%;
   h1 {
     padding-top: 4rem;

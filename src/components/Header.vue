@@ -1,20 +1,20 @@
 <template>
   <header class="mb-2">
     <Navbar />
-    <Jumbotron />
+    <HeaderHero />
     <img class="wave-svg" src="../assets/img/Wave-1.png" alt="wave image" />
   </header>
 </template>
 
 <script>
 import Navbar from "./HeaderComponents/Navbar.vue";
-import Jumbotron from "./HeaderComponents/Jumbotron.vue";
+import HeaderHero from "./HeaderComponents/HeaderHero.vue";
 
 export default {
   name: "IndexHeader",
   components: {
     Navbar,
-    Jumbotron,
+    HeaderHero,
   },
 };
 </script>
@@ -25,7 +25,7 @@ header {
   overflow: hidden;
   position: relative;
   color: white;
-  height: 90vh;
+  height: 83vh;
   background-image: linear-gradient($primaryColorLayer, $primaryColorLayer),
     url(../assets/img/theme_slider2_bg-1.jpg); // must change on slide
   background-position: top center;

@@ -8,7 +8,7 @@
           alt="eduprime theme logo"
         />
       </div>
-      <div id="header-content" class="col-6">
+      <div id="header-content" class="col-6 pt-2">
         <ul>
           <li
             v-for="(link, i) in navLinks"

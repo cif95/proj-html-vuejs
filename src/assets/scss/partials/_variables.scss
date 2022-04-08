@@ -2,6 +2,7 @@ $primaryColor: #e56767;
 $primaryColorLayer: #e56767ee;
 $secondaryColor: #E9D758;
 $sectionHeadingColor: #3D404F;
+$cardTextColor: #74777B;
 
 @mixin custom-list($textColor) {
 	margin: 0;
@@ -30,4 +31,21 @@ $sectionHeadingColor: #3D404F;
 	right: $right;
 	bottom: $bottom;
 	left: $left;
+}
+
+@mixin eventCard{
+	width: 90%;
+  border-radius: 10px;
+  padding: 2rem 0.5rem;
+  color: $cardTextColor;
+  background-color: white;
+  h3 {
+    color: $sectionHeadingColor;
+  }
+  button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    transform: translateX(-50%);
+    @include position(absolute, 90%, 0, inherit, 50%);
+  }
 }

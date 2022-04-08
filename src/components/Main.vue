@@ -5,11 +5,12 @@
         <StandardContent :section="this.sections[0]" />
       </div>
     </section>
-    <section id="faculties" class="text-center position-relative pb-5">
+    <section id="faculties" class="position-relative pb-5">
       <FacultiesContent :faculties="this.faculties" />
       <div class="container pb-5">
         <!-- standard content active must change on click  -->
         <StandardContent
+          class="fs-6"
           v-show="item.active"
           v-for="(item, index) in this.faculties"
           :key="index"
@@ -19,6 +20,7 @@
     </section>
     <section id="time-line">
       <TimeLineContent />
+      <!-- card component here -->
     </section>
     <section id="latest-courses">
       <div class="container">
@@ -180,6 +182,7 @@ section#faculties::after {
 }
 
 section#time-line {
+  position: relative;
   color: white;
   background-color: $primaryColor;
   h1,

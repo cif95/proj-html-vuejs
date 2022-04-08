@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-center">
     <h2>Faculties available at EduPrime</h2>
     <p class="w-25 mx-auto py-3">
       A single university with a load of courses, tailored to satisfy any
