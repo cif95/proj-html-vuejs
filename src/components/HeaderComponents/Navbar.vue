@@ -9,16 +9,26 @@
         />
       </div>
       <div id="header-content" class="col-9">
-        <ul>
+        <ul id="my-nav-links">
           <li
             v-for="(link, i) in navLinks"
             :key="i"
             :class="{ active: link.active }"
             class="d-flex"
             @click="updateActive(i)"
+            @mouseenter="openDropdown(link)"
+            @mouseleave="closeDropdown(link)"
           >
             <a :href="link.href">
               <h6>{{ link.text }}</h6>
+              <ul
+                id="my-dropdown-links"
+                :class="checkDropDown(link) ? 'my-visible' : 'my-invisible'"
+              >
+                <li v-for="(link, i) in link.dropdown" :key="i">
+                  <a :href="link.href">{{ link.text }}</a>
+                </li>
+              </ul>
             </a>
             <i
               v-if="link.dropdown"
@@ -48,47 +58,101 @@ export default {
         {
           text: "Home",
           href: "#",
-          dropdown: true,
+          isDropdownOpen: false,
+          dropdown: [
+            {
+              text: "Driving School",
+              href: "#",
+            },
+            {
+              text: "High School",
+              href: "#",
+            },
+            {
+              text: "Kinder Garten",
+              href: "#",
+            },
+          ],
           active: true,
         },
         {
           text: "Courses",
           href: "#",
-          dropdown: true,
+          isDropdownOpen: false,
+          dropdown: [
+            {
+              text: "Our Courses",
+              href: "#",
+            },
+            {
+              text: "Instructor Profile",
+              href: "#",
+            },
+            {
+              text: "Become a teacher",
+              href: "#",
+            },
+          ],
           active: false,
         },
         {
           text: "About Us",
           href: "#",
-          dropdown: false,
           active: false,
         },
         {
           text: "News",
           href: "#",
-          dropdown: true,
+          isDropdownOpen: false,
+          dropdown: [
+            {
+              text: "Our Courses",
+              href: "#",
+            },
+            {
+              text: "Instructor Profile",
+              href: "#",
+            },
+            {
+              text: "Become a teacher",
+              href: "#",
+            },
+          ],
           active: false,
         },
         {
           text: "Pages",
           href: "#",
-          dropdown: true,
+          isDropdownOpen: false,
+          dropdown: [
+            {
+              text: "Our Courses",
+              href: "#",
+            },
+            {
+              text: "Instructor Profile",
+              href: "#",
+            },
+            {
+              text: "Become a teacher",
+              href: "#",
+            },
+          ],
           active: false,
         },
         {
           text: "Contact",
           href: "#",
-          dropdown: false,
           active: false,
         },
         {
           text: "Purchase",
           href: "#",
-          dropdown: false,
           active: false,
         },
       ],
       isActive: false,
+      isDropped: false,
     };
   },
   methods: {
@@ -100,6 +164,15 @@ export default {
           el.active = false;
         }
       });
+    },
+    openDropdown(link) {
+      link.isDropdownOpen = true;
+    },
+    closeDropdown(link) {
+      link.isDropdownOpen = false;
+    },
+    checkDropDown(link) {
+      if (link.isDropdownOpen && link.dropdown) return true;
     },
   },
   computed: {
@@ -121,7 +194,7 @@ nav {
     @include flex(space-between, center, 0);
     #header-content {
       @include flex(flex-end, center, 2rem);
-      ul {
+      ul#my-nav-links {
         @include custom-list(white);
         @include flex(center, center, 2rem);
         li.active,
@@ -131,6 +204,9 @@ nav {
         }
         li a h6 {
           font-size: 1.05rem;
+        }
+        ul#my-dropdown-links {
+          @include dropDown;
         }
       }
     }

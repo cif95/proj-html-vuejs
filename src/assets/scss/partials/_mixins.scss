@@ -101,3 +101,20 @@
     background-color: $primaryColor;
   }
 }
+
+@mixin dropDown {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1rem;
+  transition: all 0.4s ease-in-out;
+  line-height: 2rem;
+  font-family: 'Fredoka One', cursive;
+  @include position(absolute, 70%, inherit, inherit, inherit);
+  li a {
+    color: #5c5e6c;
+    font-size: 0.9rem;
+  }
+  li a:hover {
+    color: $primaryColor;
+  }
+}
