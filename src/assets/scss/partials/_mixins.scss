@@ -96,4 +96,8 @@
   background-color: $secondaryColor;
   transform: translateY(-50%);
   @include position(absolute, 50%, inherit, inherit, 81%);
+  &:hover {
+    transition: all 0.5s;
+    background-color: $primaryColor;
+  }
 }

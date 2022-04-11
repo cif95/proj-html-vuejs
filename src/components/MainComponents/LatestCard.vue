@@ -33,5 +33,9 @@ export default {
 @import "../../assets/scss/partials/_mixins.scss";
 div.my-courses-card {
   @include courseCard;
+  button:hover {
+    border: 1px solid $secondaryColor;
+    background-color: $secondaryColor;
+  }
 }
 </style>

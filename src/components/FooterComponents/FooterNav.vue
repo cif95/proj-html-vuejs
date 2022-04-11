@@ -142,15 +142,24 @@ section {
     width: 50px;
     height: 50px;
     margin-right: 1rem;
-    line-height: 50px;
+    line-height: 47px;
+    font-size: 1.15rem;
     text-align: center;
     border: 2px solid $secondaryColor;
     border-radius: 50px;
+    &:hover {
+      transition: all 0.5s ease-in-out;
+      background-color: $secondaryColor;
+    }
   }
   ul {
     @include custom-list(white);
     line-height: 2.25rem;
     padding-top: 1rem;
+    li:hover a {
+      color: $secondaryColor;
+      transition: all 0.2s ease-in-out;
+    }
   }
   div#search-categories {
     position: relative;

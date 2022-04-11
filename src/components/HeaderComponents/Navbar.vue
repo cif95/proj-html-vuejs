@@ -8,18 +8,22 @@
           alt="eduprime theme logo"
         />
       </div>
-      <div id="header-content" class="col-6 pt-2">
+      <div id="header-content" class="col-9">
         <ul>
           <li
             v-for="(link, i) in navLinks"
             :key="i"
             :class="{ active: link.active }"
             class="d-flex"
+            @click="updateActive(i)"
           >
             <a :href="link.href">
               <h6>{{ link.text }}</h6>
             </a>
-            <i v-if="link.dropdown" class="fas fa-sort-down ms-2"></i>
+            <i
+              v-if="link.dropdown"
+              class="fas fa-sort-down ms-2 fa-2xs pt-2"
+            ></i>
           </li>
         </ul>
         <button
@@ -54,7 +58,7 @@ export default {
           active: false,
         },
         {
-          text: "About us",
+          text: "About Us",
           href: "#",
           dropdown: false,
           active: false,
@@ -87,6 +91,17 @@ export default {
       isActive: false,
     };
   },
+  methods: {
+    updateActive(i) {
+      this.navLinks.forEach((el, index) => {
+        if (index === i) {
+          el.active = true;
+        } else {
+          el.active = false;
+        }
+      });
+    },
+  },
   computed: {
     getBtnColor() {
       if (this.isActive) {
@@ -108,10 +123,14 @@ nav {
       @include flex(flex-end, center, 2rem);
       ul {
         @include custom-list(white);
-        @include flex(center, center, 1.5rem);
+        @include flex(center, center, 2rem);
         li.active,
-        li.active a {
+        li.active a,
+        li:hover a {
           color: $secondaryColor;
+        }
+        li a h6 {
+          font-size: 1.05rem;
         }
       }
     }

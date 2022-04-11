@@ -25,5 +25,9 @@ export default {
 @import "../../assets/scss/partials/_mixins.scss";
 div.my-event-card {
   @include eventCard;
+  button:hover {
+    border: 1px solid $secondaryColor;
+    background-color: $secondaryColor;
+  }
 }
 </style>

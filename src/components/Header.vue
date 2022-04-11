@@ -85,6 +85,13 @@ export default {
     hideControls() {
       this.isMouseOver = false;
     },
+    autoPlay() {
+      let autoSlide = setInterval(this.slideNext, 2500);
+      console.log(autoSlide + "auto slide partito");
+    },
+  },
+  mounted() {
+    this.autoPlay();
   },
 };
 </script>

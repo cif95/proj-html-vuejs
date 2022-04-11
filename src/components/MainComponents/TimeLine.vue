@@ -10,14 +10,14 @@
           />
           <h2>University Year</h2>
         </div>
-        <div class="col-4 offset-3">
+        <div class="col-4 offset-3 pb-4">
           <h6>Demo Classes</h6>
           <p>
             In the first week, students try to accomodate with the teaching
             style and choose their optional courses.
           </p>
         </div>
-        <div class="col-4">
+        <div class="col-4 pb-4">
           <h6>Graduation Day</h6>
           <p>
             In the first week, students try to accomodate with the teaching
@@ -30,14 +30,14 @@
             alt="timeline picture"
           />
         </div>
-        <div class="col-4 offset-1">
+        <div class="col-4 offset-1 pt-4">
           <h6>Orientation</h6>
           <p>
             In the first week, students try to accomodate with the teaching
             style and choose their optional courses.
           </p>
         </div>
-        <div class="col-4">
+        <div class="col-4 pt-4">
           <h6>Evaluation</h6>
           <p>
             In the first week, students try to accomodate with the teaching
@@ -155,17 +155,23 @@ section#time-line {
   h2 {
     color: white;
   }
-  div#university-year h2 {
-    width: fit-content;
-    margin: 1.5rem auto;
-    background-color: #db2a2c;
-  }
   h6 {
     font-size: 1.2rem;
   }
   p {
-    font-weight: 300;
+    font-weight: 400;
     max-width: 90%;
+    margin: 0 auto;
+  }
+  div#university-year {
+    p {
+      color: #ffffffbd;
+    }
+    h2 {
+      width: fit-content;
+      margin: 1.5rem auto;
+      background-color: #db2a2c;
+    }
   }
   img.clock-icon {
     width: 65px;
