@@ -31,7 +31,6 @@ export default {
         {
           thumbIconPath: "Gavel-v2.png",
           thumbIconAlt: "Law faculty icon",
-          active: true,
           hasIcon: false,
           iconPath: null,
           imgPath: "Gavel-Illustration-e1556884768193.png",
@@ -43,7 +42,6 @@ export default {
           isSliderItem: true,
         },
         {
-          active: false,
           hasIcon: false,
           iconPath: null,
           thumbIconPath: "Coins-tabs-v2.png",
@@ -57,7 +55,6 @@ export default {
           isSliderItem: true,
         },
         {
-          active: false,
           hasIcon: false,
           iconPath: null,
           title: "Medicine",
@@ -71,7 +68,6 @@ export default {
           isSliderItem: true,
         },
         {
-          active: false,
           hasIcon: false,
           iconPath: null,
           thumbIconPath: "Computer-tabs-v2.png",
@@ -85,7 +81,6 @@ export default {
           isSliderItem: true,
         },
         {
-          active: false,
           hasIcon: false,
           iconPath: null,
           thumbIconPath: "Palette-tabs-v2.png",

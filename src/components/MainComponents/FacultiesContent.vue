@@ -10,7 +10,7 @@
       <div
         @click="sendActiveIndex(index)"
         class="my-slider-thumbs"
-        :class="{ active: item.active }"
+        :class="{ active: index == activeIndex }"
         v-for="(item, index) in this.faculties"
         :key="index"
       >
@@ -30,9 +30,15 @@
 export default {
   name: "FacultiesContent",
   props: ["faculties"],
+  data() {
+    return {
+      activeIndex: 0,
+    };
+  },
   methods: {
     sendActiveIndex(index) {
-      this.$emit("clickedThumb", index);
+      this.activeIndex = index;
+      this.$emit("clickedThumb", this.activeIndex);
     },
   },
 };
