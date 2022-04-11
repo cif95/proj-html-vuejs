@@ -13,17 +13,22 @@
         :src="require(`../../assets/img/${section.iconPath}`)"
         :alt="section.iconPath"
       />
-      <h2 :class="checkTextSize">
+      <h2 :class="getTextSize">
         {{ section.title }}
       </h2>
-      <p class="py-3" :class="checkTextColor">
+      <p class="py-3" :class="getTextColor">
         {{ section.text }}
       </p>
-      <button :class="checkBtnColor" class="my-btn">
+      <button
+        :class="getBtnColor"
+        class="my-btn"
+        @mouseover="isActive = true"
+        @mouseleave="isActive = false"
+      >
         {{ section.btnText }}
       </button>
     </div>
-    <div :class="checkColSize">
+    <div :class="getColSize">
       <img
         class="img-fluid px-2 py-5 w-75"
         :src="require(`../../assets/img/${section.imgPath}`)"
@@ -36,20 +41,29 @@
 <script>
 export default {
   name: "standardContent",
+  data() {
+    return {
+      isActive: false,
+    };
+  },
   props: ["section"],
   computed: {
-    checkTextColor() {
+    getTextColor() {
       return { "text-lighter": this.section.isSliderItem };
     },
-    checkTextSize() {
+    getTextSize() {
       return { "my-slider-fs": this.section.isSliderItem };
     },
-    checkBtnColor() {
-      return this.section.btnColor == "yellow"
-        ? "my-btn-yellow"
-        : "my-btn-primary";
+    getBtnColor() {
+      if (!this.isActive) {
+        return this.section.btnColor == "yellow"
+          ? "my-btn-yellow"
+          : "my-btn-primary";
+      } else {
+        return this.section.btnActive == "red" ? "my-btn-red" : "my-btn-yellow";
+      }
     },
-    checkColSize() {
+    getColSize() {
       return this.section.isSliderItem ? "col-5" : "col-6";
     },
   },

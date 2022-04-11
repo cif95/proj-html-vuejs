@@ -49,5 +49,9 @@ img {
   max-width: 250px;
   min-height: 50px;
   max-height: 50px;
+  &:hover {
+    cursor: pointer;
+    filter: opacity(1);
+  }
 }
 </style>

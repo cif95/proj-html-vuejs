@@ -19,9 +19,15 @@ h2 {
 	background-color: $secondaryColor;
 }
 
+.my-btn-red {
+	color: white;
+	border: 1px solid #dd3333;
+	background-color: #dd3333;
+}
+
 .my-btn-primary {
 	color: white;
-	box-shadow: 1px 1px 9px #1515153b;
+	box-shadow: 1px 1px 10px rgba(21, 21, 21, 0.09);
 	border: 1px solid $primaryColor;
 	background-color: $primaryColor;
 }

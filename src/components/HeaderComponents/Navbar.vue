@@ -22,7 +22,12 @@
             <i v-if="link.dropdown" class="fas fa-sort-down ms-2"></i>
           </li>
         </ul>
-        <button class="my-btn my-btn-yellow text-uppercase">
+        <button
+          :class="getBtnColor"
+          @mouseover="isActive = true"
+          @mouseleave="isActive = false"
+          class="my-btn text-uppercase"
+        >
           View Courses
         </button>
       </div>
@@ -79,7 +84,17 @@ export default {
           active: false,
         },
       ],
+      isActive: false,
     };
+  },
+  computed: {
+    getBtnColor() {
+      if (this.isActive) {
+        return "my-btn-white";
+      } else {
+        return "my-btn-yellow";
+      }
+    },
   },
 };
 </script>

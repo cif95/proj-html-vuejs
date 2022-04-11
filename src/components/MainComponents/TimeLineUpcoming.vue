@@ -11,7 +11,14 @@
       <EventCard :item="event" />
     </div>
     <div class="col-12 py-5">
-      <button class="my-btn my-btn-yellow">View all events</button>
+      <button
+        :class="getBtnColor"
+        @mouseover="isActive = true"
+        @mouseleave="isActive = false"
+        class="my-btn"
+      >
+        View all events
+      </button>
     </div>
   </div>
 </template>
@@ -43,7 +50,17 @@ export default {
           text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor[...]",
         },
       ],
+      isActive: false,
     };
+  },
+  computed: {
+    getBtnColor() {
+      if (!this.isActive) {
+        return "my-btn-yellow";
+      } else {
+        return "my-btn-primary";
+      }
+    },
   },
 };
 </script>

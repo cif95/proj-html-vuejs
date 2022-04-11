@@ -24,6 +24,7 @@ export default {
         text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
         btnText: "Browse through courses",
         btnColor: "yellow",
+        btnActive: "red",
         textColOrder: 0,
       },
     };
