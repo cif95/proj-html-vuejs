@@ -5,9 +5,10 @@
       A single university with a load of courses, tailored to satisfy any
       student’s needs.
     </p>
-    <!-- slider -->
+    <!-- slider thumbs-->
     <div class="my-slider">
       <div
+        @click="sendActiveIndex(index)"
         class="my-slider-thumbs"
         :class="{ active: item.active }"
         v-for="(item, index) in this.faculties"
@@ -29,11 +30,17 @@
 export default {
   name: "FacultiesContent",
   props: ["faculties"],
+  methods: {
+    sendActiveIndex(index) {
+      this.$emit("clickedThumb", index);
+    },
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "../../assets/scss/partials/_variables.scss";
+@import "../../assets/scss/partials/_mixins.scss";
 div.my-slider {
   @include flex(center, center, 0);
   box-shadow: 1px 1px 15px #ececee;

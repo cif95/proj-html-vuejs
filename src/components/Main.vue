@@ -1,200 +1,33 @@
 <template>
   <main>
-    <section id="courses">
-      <div class="container">
-        <StandardContent :section="this.sections[0]" />
-      </div>
-    </section>
-    <section id="faculties" class="position-relative pb-5">
-      <FacultiesContent :faculties="this.faculties" />
-      <div class="container pb-5">
-        <!-- standard content active must change on click  -->
-        <StandardContent
-          class="fs-6"
-          v-show="item.active"
-          v-for="(item, index) in this.faculties"
-          :key="index"
-          :section="item"
-        />
-      </div>
-    </section>
-    <section id="time-line">
-      <TimeLineContent />
-    </section>
-    <section id="latest-courses" class="pt-5">
-      <div class="container py-5">
-        <div class="row">
-          <div class="col-12 py-5">
-            <h2>Latest courses</h2>
-          </div>
-          <div class="col-3 px-3" v-for="(course, i) in this.courses" :key="i">
-            <CoursesCard :course="course" />
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="methods">
-      <div class="container">
-        <StandardContent :section="this.sections[1]" />
-      </div>
-    </section>
-    <section id="fees">
-      <div class="container">
-        <StandardContent :section="this.sections[2]" />
-      </div>
-    </section>
+    <Courses />
+    <Faculties />
+    <TimeLine />
+    <Latest />
+    <Methods />
+    <Fees />
     <Banner />
   </main>
 </template>
 
 <script>
-import StandardContent from "./MainComponents/StandardContent.vue";
-import FacultiesContent from "./MainComponents/FacultiesContent.vue";
-import TimeLineContent from "./MainComponents/TimeLineContent.vue";
-import CoursesCard from "./MainComponents/CoursesCard.vue";
+import Courses from "./MainComponents/Courses.vue";
+import Faculties from "./MainComponents/Faculties.vue";
+import TimeLine from "./MainComponents/TimeLine.vue";
+import Latest from "./MainComponents/Latest.vue";
+import Methods from "./MainComponents/Methods.vue";
+import Fees from "./MainComponents/Fees.vue";
 import Banner from "./MainComponents/Banner.vue";
 
 export default {
   name: "IndexMain",
-  data() {
-    return {
-      faculties: [
-        {
-          thumbIconPath: "Gavel-v2.png",
-          thumbIconAlt: "Law faculty icon",
-          active: true,
-          hasIcon: false,
-          iconPath: null,
-          imgPath: "Gavel-Illustration-e1556884768193.png",
-          title: "Law Faculty",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
-          btnText: "ReadMore",
-          btnColor: "primary",
-          textColOrder: 1,
-          isSliderItem: true,
-        },
-        {
-          active: false,
-          hasIcon: false,
-          iconPath: null,
-          thumbIconPath: "Coins-tabs-v2.png",
-          thumbIconAlt: "Economy faculty icon",
-          title: "Economy",
-          imgPath: "Economy.png",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
-          btnText: "ReadMore",
-          btnColor: "primary",
-          textColOrder: 1,
-          isSliderItem: true,
-        },
-        {
-          active: false,
-          hasIcon: false,
-          iconPath: null,
-          title: "Medicine",
-          thumbIconPath: "Medicine-tabs-v2.png",
-          thumbIconAlt: "Medicine faculty icon",
-          imgPath: "Medicine.png",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
-          btnText: "ReadMore",
-          btnColor: "primary",
-          textColOrder: 1,
-          isSliderItem: true,
-        },
-        {
-          active: false,
-          hasIcon: false,
-          iconPath: null,
-          thumbIconPath: "Computer-tabs-v2.png",
-          thumbIconAlt: "Computer science faculty icon",
-          title: "Computer science",
-          imgPath: "Computer-Science.png",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
-          btnText: "ReadMore",
-          btnColor: "primary",
-          textColOrder: 1,
-          isSliderItem: true,
-        },
-        {
-          active: false,
-          hasIcon: false,
-          iconPath: null,
-          thumbIconPath: "Palette-tabs-v2.png",
-          thumbIconAlt: "Graphic design faculty icon",
-          title: "Graphic design",
-          imgPath: "Graphic-Design.png",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
-          btnText: "ReadMore",
-          btnColor: "primary",
-          textColOrder: 1,
-          isSliderItem: true,
-        },
-      ],
-      sections: [
-        {
-          hasIcon: true,
-          iconPath: "Books-icon.png",
-          imgPath: "Graduation-Illustration.png",
-          title: "Thousands of courses",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
-          btnText: "Browse through courses",
-          btnColor: "yellow",
-          textColOrder: 0,
-        },
-        {
-          hasIcon: true,
-          iconPath: "Exam-icon.png",
-          imgPath: "Exam-Illustration.png",
-          title: "The most efficient examination method",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
-          btnText: "Discover the method",
-          btnColor: "primary",
-          textColOrder: 0,
-        },
-        {
-          hasIcon: true,
-          iconPath: "Exam-icon-1.png",
-          imgPath: "Girl-Illustration.png",
-          title: "Variable fee for international students",
-          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit Necessitatibus voluptate dolorem eligendi aut a similique praesentiu magni perferendis earum animi",
-          btnText: "List of Fees",
-          btnColor: "primary",
-          textColOrder: 1,
-        },
-      ],
-      courses: [
-        {
-          title: "Make better decisions",
-          iconPath: "Decisions-icon.png",
-          teacher: "James Colins",
-          price: "$21.00",
-        },
-        {
-          title: "How to be a speaker",
-          iconPath: "Speaker-icon.png",
-          teacher: "James Colins",
-          price: "Free",
-        },
-        {
-          title: "Network Instructions",
-          iconPath: "Network-icon.png",
-          teacher: "James Colins",
-          price: "free",
-        },
-        {
-          title: "Brand Management",
-          iconPath: "Brand-icon.png",
-          teacher: "James Colins",
-          price: "free",
-        },
-      ],
-    };
-  },
   components: {
-    StandardContent,
-    FacultiesContent,
-    TimeLineContent,
-    CoursesCard,
+    Courses,
+    Faculties,
+    TimeLine,
+    Latest,
+    Methods,
+    Fees,
     Banner,
   },
 };
@@ -202,32 +35,12 @@ export default {
 
 <style lang="scss">
 @import "../assets/scss/partials/_variables.scss";
+@import "../assets/scss/partials/_mixins.scss";
 main {
   overflow-x: hidden;
 }
 h1,
-h2 {
+h2:not(section#time-line h2) {
   color: $sectionHeadingColor;
-}
-section#courses {
-  background-image: url(../assets/img/home-background.png);
-  background-position: 100%;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-section#faculties::after {
-  content: url("../assets/img/svg/svg-0.svg");
-  @include position(absolute, 82%, 0, inherit, 0);
-}
-
-section#time-line {
-  position: relative;
-  color: white;
-  background-color: $primaryColor;
-  h1,
-  h2 {
-    color: white;
-  }
 }
 </style>

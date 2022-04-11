@@ -85,6 +85,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../../assets/scss/partials/_variables.scss";
+@import "../../assets/scss/partials/_mixins.scss";
 nav {
   div.row {
     @include flex(space-between, center, 0);

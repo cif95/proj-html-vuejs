@@ -1,0 +1,99 @@
+@import "./_variables.scss";
+@mixin custom-list($textColor) {
+	margin: 0;
+	padding: 0;
+	li {
+		color: $textColor;
+		list-style-type: none;
+		a {
+			color: $textColor;
+			text-decoration: none;
+		}
+	}
+}
+
+@mixin flex($justify, $align, $gap) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	gap: $gap;
+}
+
+
+@mixin position($position, $top, $right, $bottom, $left) {
+	position: $position;
+	top: $top;
+	right: $right;
+	bottom: $bottom;
+	left: $left;
+}
+
+@mixin eventCard{
+  max-width: 85%;
+  position: relative;
+  border-radius: 15px;
+  padding: 2rem 0.5rem;
+  color: $cardTextColor;
+  background-color: white;
+  h3.title {
+    color: $sectionHeadingColor;
+  }
+  span.date {
+    font-size: 0.85rem;
+  }
+  p.info {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+  button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    transform: translateX(-50%);
+    @include position(absolute, 90%, 0, inherit, 50%);
+  }
+}
+
+@mixin courseCard{
+  border-radius: 5px;
+  position: relative;
+  padding: 1.5rem;
+  color: #74777B;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.11);
+  color: $cardTextColor;
+  img {
+    width: 80px;
+  }
+  h5.title {
+    color: $sectionHeadingColor;
+  }
+  p.price,
+  p.teacher {
+    font-size: 0.85rem;
+  }
+  span {
+    font-weight: bold;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+    transform: translateX(-50%);
+    @include position(absolute, 90%, 0, inherit, 50%);
+  }
+}
+
+@mixin myInput {
+  border: 1px solid white;
+  padding: 1.5rem;
+  color: $greyTextColor;
+  border-radius: 50px;
+}
+
+@mixin myInputIcon {
+  color: white;
+  padding: 1.75rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  background-color: $secondaryColor;
+  transform: translateY(-50%);
+  @include position(absolute, 50%, inherit, inherit, 81%);
+}
