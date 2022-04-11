@@ -59,9 +59,27 @@ export default {
 div#header-hero {
   div#hero-content {
     width: 70%;
+    h1,
+    p,
+    button {
+      filter: opacity(1);
+      animation: 2s slowEntrance reverse ease-in-out;
+      animation-delay: -1s;
+    }
     h1 {
       font-size: 4rem;
     }
+  }
+}
+
+@keyframes slowEntrance {
+  from {
+    filter: opacity(1);
+    transform: scale(1);
+  }
+  to {
+    filter: opacity(0);
+    transform: scale(0.5);
   }
 }
 </style>

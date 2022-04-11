@@ -1,5 +1,6 @@
 <template>
   <main>
+    <BackToTop />
     <Courses />
     <Faculties />
     <TimeLine />
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import BackToTop from "./MainComponents/BackToTop.vue";
 import Courses from "./MainComponents/Courses.vue";
 import Faculties from "./MainComponents/Faculties.vue";
 import TimeLine from "./MainComponents/TimeLine.vue";
@@ -22,6 +24,7 @@ import Banner from "./MainComponents/Banner.vue";
 export default {
   name: "IndexMain",
   components: {
+    BackToTop,
     Courses,
     Faculties,
     TimeLine,

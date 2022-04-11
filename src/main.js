@@ -4,6 +4,9 @@ import "@fortawesome/fontawesome-free/css/all.css";
 
 Vue.config.productionTip = false;
 
-new Vue({
-  render: (h) => h(App),
-}).$mount("#app");
+// setting timeout function to see loader before compiling #app
+setTimeout(function () {
+  new Vue({
+    render: (h) => h(App),
+  }).$mount("#app");
+}, 5000);

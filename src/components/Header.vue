@@ -1,5 +1,5 @@
 <template>
-  <header class="mb-2">
+  <header class="mb-2" @mouseover="stopAutoPlay()" @mouseleave="autoPlay()">
     <Navbar />
     <div
       class="layer"
@@ -59,6 +59,7 @@ export default {
       ],
       activeItem: 1,
       isMouseOver: false,
+      autoSlide: null,
     };
   },
   methods: {
@@ -86,8 +87,13 @@ export default {
       this.isMouseOver = false;
     },
     autoPlay() {
-      let autoSlide = setInterval(this.slideNext, 2500);
-      console.log(autoSlide + "auto slide partito");
+      this.autoSlide = setInterval(this.slideNext, 3500);
+      console.log("autoplay started");
+    },
+    stopAutoPlay() {
+      clearInterval(this.autoSlide);
+      this.autoSlide = null;
+      console.log("autoplay stopped");
     },
   },
   mounted() {
