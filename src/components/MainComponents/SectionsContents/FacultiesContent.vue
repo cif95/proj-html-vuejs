@@ -17,7 +17,7 @@
         <img
           class="mb-3"
           :key="index"
-          :src="require(`../../assets/img/${item.thumbIconPath}`)"
+          :src="require(`../../../assets/img/${item.thumbIconPath}`)"
           :alt="item.thumbIconAlt"
         />
         <h6>{{ item.title }}</h6>
@@ -45,8 +45,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/partials/_variables.scss";
-@import "../../assets/scss/partials/_mixins.scss";
+@import "../../../assets/scss/partials/_variables.scss";
+@import "../../../assets/scss/partials/_mixins.scss";
 div.my-slider {
   @include flex(center, center, 0);
   box-shadow: 1px 1px 15px #ececee;

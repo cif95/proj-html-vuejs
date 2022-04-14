@@ -10,7 +10,7 @@
       <img
         v-if="section.hasIcon == true"
         class="img-fluid section-icon pb-4"
-        :src="require(`../../assets/img/${section.iconPath}`)"
+        :src="require(`../../../assets/img/${section.iconPath}`)"
         :alt="section.iconPath"
       />
       <h2 :class="getTextSize">
@@ -31,7 +31,7 @@
     <div :class="getColSize">
       <img
         class="img-fluid px-2 py-5 w-75"
-        :src="require(`../../assets/img/${section.imgPath}`)"
+        :src="require(`../../../assets/img/${section.imgPath}`)"
         :alt="section.imgPath"
       />
     </div>

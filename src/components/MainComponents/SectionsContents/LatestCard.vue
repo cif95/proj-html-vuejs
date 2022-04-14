@@ -2,7 +2,7 @@
   <div class="my-courses-card text-center">
     <img
       class="img-fluid py-4"
-      :src="require(`../../assets/img/${course.iconPath}`)"
+      :src="require(`../../../assets/img/${course.iconPath}`)"
       :alt="course.iconPath"
     />
     <h5 class="title">{{ course.title }}</h5>
@@ -29,8 +29,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/partials/_variables.scss";
-@import "../../assets/scss/partials/_mixins.scss";
+@import "../../../assets/scss/partials/_variables.scss";
+@import "../../../assets/scss/partials/_mixins.scss";
 div.my-courses-card {
   @include courseCard;
   button:hover {

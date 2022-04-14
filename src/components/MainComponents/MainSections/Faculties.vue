@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import FacultiesContent from "./FacultiesContent.vue";
-import StandardContent from "./StandardContent.vue";
+import FacultiesContent from "../SectionsContents/FacultiesContent.vue";
+import StandardContent from "../SectionsContents/StandardContent.vue";
 
 export default {
   name: "SectionFaculties",
@@ -106,10 +106,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/partials/_variables.scss";
-@import "../../assets/scss/partials/_mixins.scss";
+@import "../../../assets/scss/partials/_variables.scss";
+@import "../../../assets/scss/partials/_mixins.scss";
 section#faculties::after {
-  content: url("../../assets/img/svg/svg-0.svg");
+  content: url("../../../assets/img/svg/svg-0.svg");
   @include position(absolute, 81.25%, 0, inherit, -6px);
 }
 </style>

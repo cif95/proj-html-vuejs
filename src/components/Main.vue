@@ -13,13 +13,13 @@
 
 <script>
 import BackToTop from "./MainComponents/BackToTop.vue";
-import Courses from "./MainComponents/Courses.vue";
-import Faculties from "./MainComponents/Faculties.vue";
-import TimeLine from "./MainComponents/TimeLine.vue";
-import Latest from "./MainComponents/Latest.vue";
-import Methods from "./MainComponents/Methods.vue";
-import Fees from "./MainComponents/Fees.vue";
-import Banner from "./MainComponents/Banner.vue";
+import Courses from "./MainComponents/MainSections/Courses.vue";
+import Faculties from "./MainComponents/MainSections/Faculties.vue";
+import TimeLine from "./MainComponents/MainSections/TimeLine.vue";
+import Latest from "./MainComponents/MainSections/Latest.vue";
+import Methods from "./MainComponents/MainSections/Methods.vue";
+import Fees from "./MainComponents/MainSections/Fees.vue";
+import Banner from "./MainComponents/MainSections/Banner.vue";
 
 export default {
   name: "IndexMain",

@@ -5,7 +5,7 @@
         <div class="col-12 pb-5">
           <img
             class="clock-icon"
-            src="../../assets/img/Clock-and-Bell.png"
+            src="../../../assets/img/Clock-and-Bell.png"
             alt="clock and bell icon"
           />
           <h2>University Year</h2>
@@ -26,7 +26,7 @@
         </div>
         <div class="col-12">
           <img
-            src="../../assets/img/Timeline-Item.png"
+            src="../../../assets/img/Timeline-Item.png"
             alt="timeline picture"
           />
         </div>
@@ -47,7 +47,7 @@
         <div class="col-12 pt-5 pb-2">
           <img
             class="clock-icon img-fluid p-1"
-            src="../../assets/img/upcoming-events-calendar-icon.png"
+            src="../../../assets/img/upcoming-events-calendar-icon.png"
             alt="calendar icon"
           />
         </div>
@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import TimeLineUpcoming from "./TimeLineUpcoming.vue";
+import TimeLineUpcoming from "../SectionsContents/TimeLineUpcoming.vue";
 
 export default {
   name: "SectionTimeLine",
@@ -145,8 +145,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../assets/scss/partials/_variables.scss";
-@import "../../assets/scss/partials/_mixins.scss";
+@import "../../../assets/scss/partials/_variables.scss";
+@import "../../../assets/scss/partials/_mixins.scss";
 section#time-line {
   position: relative;
   color: white;
@@ -177,7 +177,7 @@ section#time-line {
     width: 65px;
   }
   div.container::after {
-    content: url("../../assets/img/svg/svg-1.svg");
+    content: url("../../../assets/img/svg/svg-1.svg");
     position: absolute;
     top: 99.5%;
     left: 0;

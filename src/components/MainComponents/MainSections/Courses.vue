@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import StandardContent from "./StandardContent.vue";
+import StandardContent from "../SectionsContents/StandardContent.vue";
 
 export default {
   name: "SectionCourses",
@@ -34,7 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 section#courses {
-  background-image: url(../../assets/img/home-background.png);
+  background-image: url(../../../assets/img/home-background.png);
   background-position: 100%;
   background-size: contain;
   background-repeat: no-repeat;

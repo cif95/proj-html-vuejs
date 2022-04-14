@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import LatestCard from "./LatestCard.vue";
+import LatestCard from "../SectionsContents/LatestCard.vue";
 
 export default {
   name: "SectionLatest",

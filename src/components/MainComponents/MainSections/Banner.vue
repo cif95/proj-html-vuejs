@@ -21,8 +21,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/scss/partials/_variables.scss";
-@import "../../assets/scss/partials/_mixins.scss";
+@import "../../../assets/scss/partials/_variables.scss";
+@import "../../../assets/scss/partials/_mixins.scss";
 section {
   background-color: $primaryColor;
   h3 {

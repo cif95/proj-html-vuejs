@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import StandardContent from "./StandardContent.vue";
+import StandardContent from "../SectionsContents/StandardContent.vue";
 
 export default {
   name: "SectionFees",

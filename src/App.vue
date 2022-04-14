@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Loader />
     <Header />
     <Main />
     <Footer />
@@ -10,6 +11,7 @@
 import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
 import Footer from "./components/Footer.vue";
+import Loader from "./components/Loader.vue";
 
 export default {
   name: "App",
@@ -17,6 +19,7 @@ export default {
     Header,
     Main,
     Footer,
+    Loader,
   },
 };
 </script>
